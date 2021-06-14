@@ -15,11 +15,19 @@ import SideDrawer from "./components/SideDrawer/SideDrawer";
 function App() {
   const [sideToggle, setSideToggle] = useState(false);
 
+  const sideDrawerHandler = () => {
+    setSideToggle(true);
+  };
+
+  const backdropHandler = () => {
+    setSideToggle(false);
+  };
+
   return (
     <Router>
-      <Navbar />
+      <Navbar click={sideDrawerHandler} />
       <SideDrawer show={sideToggle} />
-      <Backdrop show={sideToggle} />
+      <Backdrop show={sideToggle} click={backdropHandler} />
       <main className="app">
         <Switch>
           <Route exact path="/" component={HomePage} />
