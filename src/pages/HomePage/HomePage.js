@@ -1,8 +1,30 @@
 import React from "react";
 import "./HomePage.css";
 
+// Components
+import Product from "../../components/Product/Product";
+
 const HomePage = () => {
-  return <div></div>;
+  return (
+    <div className="homepage">
+      <h2 className="homepage__title">Latest Products</h2>
+
+      <div className="homepage__products">
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+      </div>
+    </div>
+  );
 };
 
 export default HomePage;

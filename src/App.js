@@ -26,7 +26,7 @@ function App() {
   return (
     <Router>
       <Navbar click={sideDrawerHandler} />
-      <SideDrawer show={sideToggle} />
+      <SideDrawer show={sideToggle} click={backdropHandler} />
       <Backdrop show={sideToggle} click={backdropHandler} />
       <main className="app">
         <Switch>
