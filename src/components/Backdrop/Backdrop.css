@@ -8,8 +8,8 @@
   left: 0;
 }
 
-/*@media (min-width: 960px) {
+@media (min-width: 960px) {
   .backdrop {
     display: none;
   }
-}*/
+}

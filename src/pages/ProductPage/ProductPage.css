@@ -2,6 +2,7 @@
   max-width: 1300px;
   margin: 1rem auto;
   display: flex;
+  margin-top: 100px;
 }
 
 .productpage__left {

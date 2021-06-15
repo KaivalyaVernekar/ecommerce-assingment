@@ -2,6 +2,7 @@ import axios from "axios";
 
 const url = "http://localhost:9000/productsAPI";
 let apiResponse;
+let productJsonMap = {};
 
 let flag;
 
@@ -21,7 +22,18 @@ export const fetchAPIData = async () => {
   }
 
   const fetchedapiResponse = apiResponse.data;
+
   console.log(flag);
   console.log(fetchedapiResponse);
   return fetchedapiResponse;
+};
+
+export const productIdDetails = async () => {
+  const productDetailsArray = await fetchAPIData();
+  console.log(productDetailsArray);
+  productDetailsArray.map((currData) => {
+    return (productJsonMap[currData.id] = currData);
+  });
+  console.log(productJsonMap);
+  return productJsonMap;
 };

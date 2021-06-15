@@ -5,12 +5,10 @@ import "./Navbar.css";
 const Navbar = ({ click }) => {
   return (
     <nav className="navbar">
-      {/* logo */}
       <div className="navbar__logo">
         <h2>Shoppy</h2>
       </div>
 
-      {/* links */}
       <ul className="navbar__links">
         <li>
           <Link to="/">Home</Link>
@@ -25,7 +23,6 @@ const Navbar = ({ click }) => {
         </li>
       </ul>
 
-      {/* hamburger menu */}
       <div className="hamburger__menu" onClick={click}>
         <div></div>
         <div></div>

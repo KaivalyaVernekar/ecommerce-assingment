@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
-import { fetchAPIData } from "./api/index";
+import { fetchAPIData, productIdDetails } from "./api/index";
 
 //Pages
 import HomePage from "./pages/HomePage/HomePage";
@@ -16,6 +16,7 @@ import SideDrawer from "./components/SideDrawer/SideDrawer";
 function App() {
   const [sideToggle, setSideToggle] = useState(false);
   const [apiData, setApiData] = useState([]);
+  const [productData, setProductData] = useState({});
 
   useEffect(() => {
     const fetchAPI = async () => {
@@ -23,7 +24,13 @@ function App() {
     };
     fetchAPI();
   }, []);
-  console.log(apiData);
+
+  useEffect(() => {
+    const fetchProductAPI = async () => {
+      setProductData(await productIdDetails());
+    };
+    fetchProductAPI();
+  }, []);
 
   const sideDrawerHandler = () => {
     setSideToggle(true);
@@ -32,11 +39,6 @@ function App() {
   const backdropHandler = () => {
     setSideToggle(false);
   };
-
-  //trying to get productid from child to parent
-  /*const productIDHandler = (idValue) => {
-  return idValue;
-}*/
 
   return (
     <Router>
@@ -52,8 +54,8 @@ function App() {
           />
           <Route
             exact
-            path="/product/:id"
-            component={() => <ProductPage productData={apiData} />}
+            path="/product/:productId"
+            component={() => <ProductPage productDataDetails={productData} />}
           />
           <Route exact path="/cart" component={CartPage} />
         </Switch>

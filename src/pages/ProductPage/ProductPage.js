@@ -1,24 +1,28 @@
 import React from "react";
 import "./ProductPage.css";
 
-const ProductPage = () => {
+const ProductPage = ({ productDataDetails }) => {
+  let particularProductDetails;
+
+  const productIdGetter = () => {
+    const urlId = window.location.pathname.split("/");
+    const urlProductId = urlId[2];
+    particularProductDetails = productDataDetails[urlProductId];
+  };
+
+  productIdGetter();
+
   return (
     <div className="productpage">
       <div className="productpage__left">
         <div className="left__image">
-          <img
-            src="http://assets.myntassets.com/assets/images/2310365/2018/2/1/11517487630366-Roadster-Men-Black-Solid-Round-Neck-T-shirt-5871517487630224-1.jpg"
-            alt="product_image"
-          />
+          <img src={particularProductDetails.image} alt="product_image" />;
         </div>
 
         <div className="left__info">
-          <p className="left__name">Men Shirt</p>
-          <p>Price: ₹650</p>
-          <p>
-            Description: "Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Eos quidem autem dolore alias, perferendis at!"
-          </p>
+          <p className="left__name">{particularProductDetails.name}</p>
+          <p>Price: ₹{particularProductDetails.price}</p>
+          <p>Description: {particularProductDetails.description}</p>
         </div>
       </div>
 
@@ -26,7 +30,7 @@ const ProductPage = () => {
         <div className="right__info">
           <p>
             Price:
-            <span>₹650</span>
+            <span>₹{particularProductDetails.price}</span>
           </p>
 
           <p>
@@ -35,15 +39,14 @@ const ProductPage = () => {
           </p>
 
           <p>
-            Qty
+            Size
             <select>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
+              {particularProductDetails.stock.map((currSize) => (
+                <option value={currSize.label}>{currSize.label}</option>
+              ))}
             </select>
           </p>
+
           <p>
             <button type="button">Add to Cart</button>
           </p>
