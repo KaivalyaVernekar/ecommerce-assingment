@@ -39,7 +39,7 @@ const HomePage = ({ homeData }) => {
   console.log(apiData);*/
   return (
     <div className="homepage">
-      <h2 className="homepage__title">Latest Products</h2>
+      <h2 className="homepage__title">Latest Products....</h2>
 
       <div className="homepage__products">
         {homeData.map((product) => (

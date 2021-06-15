@@ -1,12 +1,14 @@
 .navbar {
   width: 100%;
   height: 75px;
-  background-color: #171717;
+  background-color: rgba(92, 95, 236, 1);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 1rem;
-  z-index: 50;
+  z-index: 20;
+  position: fixed;
+  top: 0;
 }
 
 .navbar__logo h2 {
