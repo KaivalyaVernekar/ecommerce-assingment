@@ -23,8 +23,19 @@
   margin-bottom: 8px;
 }
 
+.price-rating__box {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
 .info__price {
   font-weight: bold;
+}
+
+.info__ratings {
+  font-weight: bold;
+  font-size: 13px;
 }
 
 .info__name {
