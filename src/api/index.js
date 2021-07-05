@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = "http://localhost:9000/productsAPI";
+const url = "https://desolate-lake-68731.herokuapp.com/productsAPI";
 let apiResponse;
 let productJsonMap = {};
 

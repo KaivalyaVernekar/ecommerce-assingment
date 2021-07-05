@@ -10,10 +10,10 @@ a {
   margin: 25px auto;
 }
 .slide-img {
-  height: 450px;
+  height: 375px;
   position: relative;
 }
-.slide-img img {
+.slide-img .image {
   width: 100%;
   height: 100%;
   object-fit: cover;

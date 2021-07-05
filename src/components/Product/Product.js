@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Product.css";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const Product = ({
   image,
@@ -14,7 +16,12 @@ const Product = ({
   return (
     <div className="box">
       <div className="slide-img">
-        <img alt="product_image" src={image} />
+        <LazyLoadImage
+          className="image"
+          effect="blur"
+          alt="product_image"
+          src={image}
+        />
         <div className="overlay">
           <Link to={`/product/${productId}`} className="buy-btn">
             Buy Now
