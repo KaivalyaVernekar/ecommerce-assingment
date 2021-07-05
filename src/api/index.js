@@ -30,10 +30,10 @@ export const fetchAPIData = async () => {
 
 export const productIdDetails = async () => {
   const productDetailsArray = await fetchAPIData();
-  console.log(productDetailsArray);
+  //console.log(productDetailsArray);
   productDetailsArray.map((currData) => {
     return (productJsonMap[currData.id] = currData);
   });
-  console.log(productJsonMap);
+  //console.log(productJsonMap);
   return productJsonMap;
 };

@@ -16,7 +16,7 @@ const ProductPage = ({ productDataDetails }) => {
     <div className="productpage">
       <div className="productpage__left">
         <div className="left__image">
-          <img src={particularProductDetails.image} alt="product_image" />;
+          <img src={particularProductDetails.image} alt="product_image" />
         </div>
 
         <div className="left__info">
@@ -42,7 +42,9 @@ const ProductPage = ({ productDataDetails }) => {
             Size
             <select>
               {particularProductDetails.stock.map((currSize) => (
-                <option value={currSize.label}>{currSize.label}</option>
+                <option key={currSize.skuId} value={currSize.label}>
+                  {currSize.label}
+                </option>
               ))}
             </select>
           </p>
