@@ -13,7 +13,7 @@ export const fetchAPIData = async () => {
   if (!apiResponse) {
     try {
       apiResponse = await axios.get(url);
-      console.log(apiResponse);
+      //console.log(apiResponse);
       sessionStorage.setItem("nodeAPIResponse", JSON.stringify(apiResponse));
       flag = "via api----------------------";
     } catch (error) {
@@ -24,7 +24,7 @@ export const fetchAPIData = async () => {
   const fetchedapiResponse = apiResponse.data;
 
   console.log(flag);
-  console.log(fetchedapiResponse);
+  //console.log(fetchedapiResponse);
   return fetchedapiResponse;
 };
 
